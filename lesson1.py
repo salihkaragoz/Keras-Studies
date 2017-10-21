@@ -1,5 +1,6 @@
 # last one must be 'softmax'
 # loss= '(gerçek-tahmini)^2' 
+# https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/
 
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation
@@ -13,7 +14,7 @@ import pandas as pd
 
 data = pd.read_csv("breast-cancer-wisconsin.data")
 
-data.replace('?', -99999, inplace='true')
+data.replace('?', -99999, inplace=True)
 
 newdata = data.drop(['1000025'], axis=1)
 
